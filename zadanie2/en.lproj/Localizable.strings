@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  zadanie2
+
+  Created by Adam on 10/10/2024.
+  
+*/
+
+"Information" = "Information";
+
+"The faculty is running %i programs on graduate and undergraduate level."="The faculty is running %i programs on graduate and undergraduate level.";
+
+"image" = "wi-en";

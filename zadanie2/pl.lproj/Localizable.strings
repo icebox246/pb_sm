@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  zadanie2
+
+  Created by Adam on 10/10/2024.
+  
+*/
+
+"Information" = "Informacja";
+
+"The faculty is running %i programs on graduate and undergraduate level."="Wydzial prowadzi %i programy na magisterskim i licencjackim stopniu.";
+"image" = "wi-pl";
