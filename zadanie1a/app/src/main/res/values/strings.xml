@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="button_true">Prawda</string>
+    <string name="button_false">Fałsz</string>
+    <string name="button_next">Następne</string>
+    <string name="q_long">Typ long odnosi się do liczb zmiennoprzecinkowych</string>
+    <string name="q_vla">Variable Length Arrays nie są dostępne w ANSI C</string>
+    <string name="q_array">std::array pozwala przechowywać elementy na stosie</string>
+    <string name="q_func_pointer">typ void(*)(int) jest taki sam jak void(int) w C++</string>
+    <string name="q_char_ptr">Nie można zmieniać wartości stojącej za wskaźnikiem typu const char*</string>
+    <string name="correct_answer">Poprawna odpowiedź!</string>
+    <string name="incorrect_answer">Błędna odpowiedź!</string>
+</resources>
