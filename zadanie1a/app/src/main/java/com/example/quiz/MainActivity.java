@@ -14,12 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button trueButton;
-    private Button falseButton;
-    private Button nextButton;
     private TextView questionTextView;
 
-    private Question[] questions = {
+    private final Question[] questions = {
             new Question(R.string.q_long, false),
             new Question(R.string.q_vla, true),
             new Question(R.string.q_array, true),
@@ -29,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int currentIndex = 0;
 
-    private void checkAnswerCorrecteness(boolean userAnswer) {
+    private void checkAnswerCorrectness(boolean userAnswer) {
         boolean actualAnswer = questions[currentIndex].isTrueAnswer();
         int resultMessageId;
         if (userAnswer == actualAnswer) {
@@ -50,17 +47,17 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        trueButton = findViewById(R.id.true_button);
-        falseButton = findViewById(R.id.false_button);
-        nextButton = findViewById(R.id.next_button);
+        Button trueButton = findViewById(R.id.true_button);
+        Button falseButton = findViewById(R.id.false_button);
+        Button nextButton = findViewById(R.id.next_button);
         questionTextView = findViewById(R.id.question_text_view);
 
         trueButton.setOnClickListener((View v) -> {
-            checkAnswerCorrecteness(true);
+            checkAnswerCorrectness(true);
         });
 
         falseButton.setOnClickListener((View v) -> {
-            checkAnswerCorrecteness(false);
+            checkAnswerCorrectness(false);
         });
 
         nextButton.setOnClickListener((View v) -> {
