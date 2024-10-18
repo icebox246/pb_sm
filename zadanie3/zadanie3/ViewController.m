@@ -16,21 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self becomeFirstResponder];
-    
-    UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
-    [tapRecognizer setNumberOfTapsRequired:3];
-    [self.view addGestureRecognizer:tapRecognizer];
-    
-    [self.view addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)]];
-    
-    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
-    [swipeRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipeRecognizer];
-    
-    UILongPressGestureRecognizer* longPressRecognizer =
-    [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGesture:)];
-    [longPressRecognizer setMinimumPressDuration:2];
-    [self.view addGestureRecognizer:longPressRecognizer];
 }
 
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {

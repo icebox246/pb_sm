@@ -36,19 +36,46 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XhP-EB-B5T" appends="YES" id="RUK-n0-NVZ"/>
+                            <outletCollection property="gestureRecognizers" destination="LoR-Cz-8NE" appends="YES" id="661-JU-OdD"/>
+                            <outletCollection property="gestureRecognizers" destination="apD-mQ-CQk" appends="YES" id="rUT-dR-0ZW"/>
+                            <outletCollection property="gestureRecognizers" destination="BF7-yf-e5W" appends="YES" id="tzO-6O-TP9"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="gestureLabel" destination="pJj-ub-lqc" id="vJf-Bo-vmB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" id="XhP-EB-B5T">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="Xnk-ed-YZp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="LoR-Cz-8NE">
+                    <connections>
+                        <action selector="pinchGesture:" destination="BYZ-38-t0r" id="gHS-bk-cFk"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="apD-mQ-CQk">
+                    <connections>
+                        <action selector="swipeGesture:" destination="BYZ-38-t0r" id="vfV-vz-48P"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="BF7-yf-e5W">
+                    <connections>
+                        <action selector="longPressGesture:" destination="BYZ-38-t0r" id="ARn-Zr-cUB"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
-        <!--View Controller-->
+        <!--GPS View Controller-->
         <scene sceneID="eR9-C0-kqh">
             <objects>
-                <viewController id="fhT-cu-4IJ" customClass="GPSViewController" sceneMemberID="viewController">
+                <viewController title="GPS View Controller" id="fhT-cu-4IJ" customClass="GPSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thE-AC-gxH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
