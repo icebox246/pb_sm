@@ -1,0 +1,42 @@
+---------------------------- PROCESS STARTED (1779) for package com.example.quiz ----------------------------
+
+#### Pierwsze uruchomienie aplikacji
+2024-10-24 17:18:52.305  1779-1779  QUIZZ                   com.example.quiz                     D  onCreate was called
+2024-10-24 17:18:52.360  1779-1779  QUIZZ                   com.example.quiz                     D  onStart was called
+2024-10-24 17:18:52.362  1779-1779  QUIZZ                   com.example.quiz                     D  onResume was called
+
+#### Wciśnięcie cofnij
+2024-10-24 17:19:04.005  1779-1779  QUIZZ                   com.example.quiz                     D  onPause was called
+2024-10-24 17:19:04.554  1779-1779  QUIZZ                   com.example.quiz                     D  onStop was called
+
+#### Ponowne uruchomienie aplikacji
+2024-10-24 17:19:07.771  1779-1779  QUIZZ                   com.example.quiz                     D  onStart was called
+2024-10-24 17:19:07.772  1779-1779  QUIZZ                   com.example.quiz                     D  onResume was called
+
+#### Użycie HOME
+2024-10-24 17:19:11.820  1779-1779  QUIZZ                   com.example.quiz                     D  onPause was called
+2024-10-24 17:19:11.825  1779-1779  QUIZZ                   com.example.quiz                     D  onStop was called
+
+#### Powrót do aplikacji
+2024-10-24 17:19:18.799  1779-1779  QUIZZ                   com.example.quiz                     D  onStart was called
+2024-10-24 17:19:18.802  1779-1779  QUIZZ                   com.example.quiz                     D  onResume was called
+
+#### Obrót ekranu
+2024-10-24 17:19:52.848  1779-1779  QUIZZ                   com.example.quiz                     D  onPause was called
+2024-10-24 17:19:52.849  1779-1779  QUIZZ                   com.example.quiz                     D  onStop was called
+2024-10-24 17:19:52.850  1779-1779  QUIZZ                   com.example.quiz                     D  onDestroy was called
+2024-10-24 17:19:52.874  1779-1779  QUIZZ                   com.example.quiz                     D  onCreate was called
+2024-10-24 17:19:52.921  1779-1779  QUIZZ                   com.example.quiz                     D  onStart was called
+2024-10-24 17:19:52.922  1779-1779  QUIZZ                   com.example.quiz                     D  onResume was called
+
+---------------------------- PROCESS STARTED (2192) for package com.example.quiz ----------------------------
+...
+
+#### Obrót ekranu
+2024-10-24 17:24:32.761  2192-2192  QUIZZ                   com.example.quiz                     D  onPause was called
+2024-10-24 17:24:32.762  2192-2192  QUIZZ                   com.example.quiz                     D  onStop was called
+2024-10-24 17:24:32.762  2192-2192  QUIZZ                   com.example.quiz                     D  onSaveInstanceState was called
+2024-10-24 17:24:32.763  2192-2192  QUIZZ                   com.example.quiz                     D  onDestroy was called
+2024-10-24 17:24:32.786  2192-2192  QUIZZ                   com.example.quiz                     D  onCreate was called
+2024-10-24 17:24:32.833  2192-2192  QUIZZ                   com.example.quiz                     D  onStart was called
+2024-10-24 17:24:32.834  2192-2192  QUIZZ                   com.example.quiz                     D  onResume was called
