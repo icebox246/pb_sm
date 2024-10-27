@@ -13,7 +13,6 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -75,13 +74,9 @@ public class MainActivity extends AppCompatActivity {
         Button promptButton = findViewById(R.id.prompt_button);
         questionTextView = findViewById(R.id.question_text_view);
 
-        trueButton.setOnClickListener((View v) -> {
-            checkAnswerCorrectness(true);
-        });
+        trueButton.setOnClickListener((View v) -> checkAnswerCorrectness(true));
 
-        falseButton.setOnClickListener((View v) -> {
-            checkAnswerCorrectness(false);
-        });
+        falseButton.setOnClickListener((View v) -> checkAnswerCorrectness(false));
 
         nextButton.setOnClickListener((View v) -> {
             currentIndex = (currentIndex + 1) % questions.length;
