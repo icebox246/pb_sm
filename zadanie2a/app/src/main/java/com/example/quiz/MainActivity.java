@@ -9,6 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String KEY_CURRENT_INDEX = "currentIndex";
     public static final String KEY_EXTRA_ANSWER = "com.example.correctAnswer";
-
-    private static final int REQUEST_CODE_PROMPT = 0;
     private boolean answerWasShown;
 
     private final Question[] questions = {
@@ -88,11 +89,24 @@ public class MainActivity extends AppCompatActivity {
             setNextQuestion();
         });
 
+        ActivityResultLauncher<Intent> startForPrompt = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            (ActivityResult result) -> {
+                if (result.getResultCode() != RESULT_OK) {
+                    return;
+                }
+                Intent data = result.getData();
+                if (data == null) {
+                    return;
+                }
+                answerWasShown = data.getBooleanExtra(PromptActivity.KEY_EXTRA_ANSWER_SHOWN, false);
+            }
+        );
+
         promptButton.setOnClickListener((View v) -> {
             Intent intent = new Intent(MainActivity.this, PromptActivity.class);
             boolean correctAnswer = questions[currentIndex].isTrueAnswer();
             intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
-            startActivityForResult(intent, REQUEST_CODE_PROMPT);
+            startForPrompt.launch(intent);
         });
 
         setNextQuestion();
@@ -145,21 +159,5 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("QUIZZ", "onSaveInstanceState was called");
         outState.putInt(KEY_CURRENT_INDEX, currentIndex);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode != RESULT_OK) {
-            return;
-        }
-
-        if (requestCode == REQUEST_CODE_PROMPT) {
-            if (data == null) {
-                return;
-            }
-            answerWasShown = data.getBooleanExtra(PromptActivity.KEY_EXTRA_ANSWER_SHOWN, false);
-        }
     }
 }
