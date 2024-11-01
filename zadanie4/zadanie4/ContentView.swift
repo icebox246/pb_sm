@@ -13,14 +13,15 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        PersonView(item: item)
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text("\(item.name) \(item.surname)")
                     }
+                    .isDetailLink(true)
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -34,14 +35,12 @@ struct ContentView: View {
                     }
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = Item(name: "Jan", surname: "Kowalski", dateOfBirth: Date.now, phoneNumber: "123456789", email: "foo@bar.baz", address: "Sezamkowa 21")
             modelContext.insert(newItem)
         }
     }
