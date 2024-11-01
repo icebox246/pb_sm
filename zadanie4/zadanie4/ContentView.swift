@@ -17,7 +17,7 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        PersonView(item: item)
+                        PersonDetails(item: item)
                     } label: {
                         Text("\(item.name) \(item.surname)")
                     }
@@ -30,7 +30,9 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    NavigationLink {
+                        PersonCreation()
+                    } label: {
                         Label("Add Item", systemImage: "plus")
                     }
                 }

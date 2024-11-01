@@ -8,26 +8,41 @@
 import SwiftUI
 import SwiftData
 
-struct PersonView: View {
-    @State private var item: Item
+struct PersonDetails: View {
+    @Environment(\.editMode) private var editMode
+    
+    private var item: Item
+    private var workingItem: Item
     
     init(item: Item) {
         self.item = item
+        
+        workingItem = Item(name: "", surname: "", dateOfBirth: Date.now, phoneNumber: "", email: "", address: "")
+        workingItem.setFrom(item)
     }
     
     var body: some View {
-        PersonForm(item: item)
+        PersonForm(item: workingItem)
         .navigationTitle("Details")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                EditButton()
+                if editMode?.wrappedValue.isEditing ?? false {
+                    Button {
+                        item.setFrom(workingItem)
+                        editMode?.wrappedValue = .inactive
+                    } label: {
+                        Text("Save")
+                    }.disabled(!workingItem.isValid)
+                } else {
+                    Button {
+                        editMode?.wrappedValue = .active
+                    } label: {
+                        Text("Edit")
+                    }
+                }
             }
+        }.onAppear {
+            workingItem.setFrom(item)
         }
-    }
-}
-
-#Preview {
-    NavigationStack {
-        PersonView(item: Item(name: "Jan", surname: "Kowalski", dateOfBirth: Date.now, phoneNumber: "123456789", email: "foo@bar.baz", address: "Sezamkowa 21"))
     }
 }
