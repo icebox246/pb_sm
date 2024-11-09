@@ -1,10 +1,17 @@
 package arogowski.todoapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
 import java.util.Date;
 import java.util.UUID;
 
 public class Task {
-    private UUID id;
+    public static final String dateFormat = "HH:mm dd-MM-yyyy";
+    private final UUID id;
     private String name;
     private Date date;
     private boolean done;

@@ -5,9 +5,10 @@
     android:orientation="vertical">
 
     <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista" />
+        android:text="@string/list_caption" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/task_recycler_view"

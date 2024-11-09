@@ -29,7 +29,7 @@ public class TaskFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         assert getArguments() != null;
-        UUID taskId = (UUID)getArguments().getSerializable(ARG_TASK_ID);
+        UUID taskId = (UUID) getArguments().getSerializable(ARG_TASK_ID);
         task = TaskStorage.getInstance().getTask(taskId);
     }
 
@@ -39,6 +39,7 @@ public class TaskFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_task, container, false);
 
         nameField = view.findViewById(R.id.task_name);
+        nameField.setText(task.getName());
         nameField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -57,10 +58,8 @@ public class TaskFragment extends Fragment {
         });
 
         dateButton = view.findViewById(R.id.task_date);
-        if (task.getDate() != null) {
-            dateButton.setText(task.getDate().toString());
-            dateButton.setEnabled(true);
-        }
+        dateButton.setText(task.getDate().toString());
+        dateButton.setEnabled(false);
 
         checkBox = view.findViewById(R.id.task_done);
         checkBox.setChecked(task.isDone());
