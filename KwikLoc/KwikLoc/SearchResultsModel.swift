@@ -45,8 +45,6 @@ class SearchResultsModel: ObservableObject {
 
         guard let url = URL(string: "https://api.geoapify.com/v2/places?categories=\(category.data.1)&filter=circle:\(location.coordinate.longitude),\(location.coordinate.latitude),\(maxDistance * 1000)&bias=proximity:\(location.coordinate.longitude),\(location.coordinate.latitude)&lang=pl&limit=10&apiKey=\(geoapifyAccessToken)") else {return }
 
-        print(#function, url)
-        
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else { return }
             
